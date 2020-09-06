@@ -1,6 +1,6 @@
 FROM node
-EXPOSE 8081
+EXPOSE 3000
 COPY . .
-RUN npm run build
+RUN npm install
 
 CMD npm run server
