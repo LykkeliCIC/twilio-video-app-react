@@ -23,7 +23,7 @@ spec:
             - name: TWILIO_API_KEY_SECRET
               value: "${TWILIO_API_KEY_SECRET}"
             - name: REACT_APP_SET_AUTH
-              value: firebase
+              value: "firebase"
             - name: REACT_APP_FIREBASE_API_KEY
               value: "${REACT_APP_FIREBASE_API_KEY}"
             - name: REACT_APP_FIREBASE_AUTH_DOMAIN
