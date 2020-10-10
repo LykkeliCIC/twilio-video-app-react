@@ -22,6 +22,18 @@ spec:
               value: "${TWILIO_API_KEY_SID}"
             - name: TWILIO_API_KEY_SECRET
               value: "${TWILIO_API_KEY_SECRET}"
+            - name: REACT_APP_SET_AUTH
+              value: firebase
+            - name: REACT_APP_FIREBASE_API_KEY
+              value: "${REACT_APP_FIREBASE_API_KEY}"
+            - name: REACT_APP_FIREBASE_AUTH_DOMAIN
+              value: "${REACT_APP_FIREBASE_AUTH_DOMAIN}"
+            - name: REACT_APP_FIREBASE_DATABASE_URL
+              value: "$REACT_APP_FIREBASE_DATABASE_URL"
+            - name: REACT_APP_FIREBASE_STORAGE_BUCKET
+              value: "${REACT_APP_FIREBASE_STORAGE_BUCKET}"
+            - name: REACT_APP_FIREBASE_MESSAGING_SENDER_ID
+              value: "${REACT_APP_FIREBASE_MESSAGING_SENDER_ID}"
 
 ---
 
