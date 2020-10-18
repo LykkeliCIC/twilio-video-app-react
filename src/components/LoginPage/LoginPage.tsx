@@ -10,11 +10,11 @@ import { ReactComponent as GoogleLogo } from './google-logo.svg';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme, Theme, ThemeProvider } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
 import { useLocation, useHistory } from 'react-router-dom';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => ({
   container: {
     height: '100vh',
   },
@@ -33,8 +33,7 @@ const useStyles = makeStyles({
     maxWidth: '460px',
     padding: '2em',
     marginTop: '4em',
-    background: 'white',
-    color: 'black',
+    backgroundColor: theme.palette.background.default,
   },
   button: {
     color: 'black',
@@ -51,7 +50,7 @@ const useStyles = makeStyles({
       marginRight: '0.4em',
     },
   },
-});
+}));
 
 const theme = createMuiTheme({
   palette: {
@@ -94,7 +93,7 @@ export default function LoginPage() {
   return (
     <ThemeProvider theme={theme}>
       <Grid container justify="center" alignItems="flex-start" className={classes.container}>
-        <Paper className={classes.paper} elevation={6}>
+        <Paper className={classes.paper} elevation={0}>
           <LykkeliLogo />
           {process.env.REACT_APP_SET_AUTH === 'firebase' && (
             <Button variant="contained" className={classes.button} onClick={login} startIcon={<GoogleLogo />}>
