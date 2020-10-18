@@ -12,8 +12,7 @@ jest.mock('react-router-dom', () => {
 });
 jest.mock('../../state');
 jest.mock('./google-logo.svg', () => ({ ReactComponent: () => null }));
-jest.mock('./twilio-logo.svg', () => ({ ReactComponent: () => null }));
-jest.mock('./video-logo.png', () => ({ ReactComponent: () => null }));
+jest.mock('../MainParticipant/lykkeli.png', () => ({ ReactComponent: () => null }));
 
 const mockUseAppState = useAppState as jest.Mock<any>;
 const mockUseLocation = useLocation as jest.Mock<any>;
@@ -102,13 +101,13 @@ describe('the LoginPage component', () => {
       act(() => {
         fireEvent.change(getByLabelText('Passcode'), { target: { value: '1234' } });
       });
-      
+
       act(() => {
         fireEvent.submit(getByText('Submit'));
       });
 
-      const element = await waitForElement(() => getByText('Test Error')) 
-      expect(element).toBeTruthy()
+      const element = await waitForElement(() => getByText('Test Error'));
+      expect(element).toBeTruthy();
     });
   });
 

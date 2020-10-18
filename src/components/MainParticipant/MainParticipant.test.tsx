@@ -9,6 +9,7 @@ import useScreenShareParticipant from '../../hooks/useScreenShareParticipant/use
 jest.mock('../../hooks/useMainSpeaker/useMainSpeaker');
 jest.mock('../VideoProvider/useSelectedParticipant/useSelectedParticipant');
 jest.mock('../../hooks/useScreenShareParticipant/useScreenShareParticipant');
+jest.mock('./lykkeli.png', () => ({ ReactComponent: () => null }));
 
 const mockUseMainSpeaker = useMainSpeaker as jest.Mock<any>;
 const mockUseSelectedParticipant = useSelectedParticipant as jest.Mock<any>;
