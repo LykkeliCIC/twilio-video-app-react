@@ -52,6 +52,7 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: '1.1em 0.6em',
       minWidth: '200px',
       fontWeight: 600,
+      color: theme.palette.primary.main,
     },
     joinButton: {
       margin: '1em',
