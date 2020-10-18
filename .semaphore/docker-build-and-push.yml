@@ -12,13 +12,13 @@ blocks:
           commands:
             - 'echo "${DOCKERHUB_PASSWORD}" | docker login -u "${DOCKERHUB_USERNAME}" --password-stdin'
             - checkout
-            - 'docker build -t "${DOCKERHUB_USERNAME}"/lykkeliapp:$SEMAPHORE_WORKFLOW_ID .  \'
+            - 'docker build -t "${DOCKERHUB_USERNAME}"/lykkeliapp:$SEMAPHORE_WORKFLOW_ID  \'
             - '        --build-arg REACT_APP_FIREBASE_API_KEY=$REACT_APP_FIREBASE_API_KEY  \'
             - '        --build-arg REACT_APP_FIREBASE_AUTH_DOMAIN=$REACT_APP_FIREBASE_AUTH_DOMAIN  \'
             - '        --build-arg REACT_APP_FIREBASE_DATABASE_URL=$REACT_APP_FIREBASE_DATABASE_URL  \'
             - '        --build-arg REACT_APP_FIREBASE_STORAGE_BUCKET=$REACT_APP_FIREBASE_STORAGE_BUCKET  \'
             - '        --build-arg REACT_APP_FIREBASE_MESSAGING_SENDER_ID=$REACT_APP_FIREBASE_MESSAGING_SENDER_ID  \'
-            - '        --build'
+            - '        --build .'
             - docker images
             - 'docker push "${DOCKERHUB_USERNAME}"/lykkeliapp:$SEMAPHORE_WORKFLOW_ID'
       secrets:
