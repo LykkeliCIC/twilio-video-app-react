@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: lykkeliapp
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: lykkeliapp
